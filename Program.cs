@@ -1,17 +1,23 @@
+using System;
+using System.Windows.Forms;
+
 namespace DeLFINA_GUI
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+
+            // Inisialisasi API Otentikasi (Database lokal)
+            string dbProposals = "proposals.json";
+            string dbUsers = "users.json";
+
+            IAuthApi authService = new JsonAuthService(dbUsers);
+
+            // Dependency Injection
+            Application.Run(new FormLogin(authService));
         }
     }
 }
