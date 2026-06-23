@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvProposals = new DataGridView();
             txtCatatan = new TextBox();
             btnTerima = new Button();
@@ -35,21 +36,34 @@
             btnRevisi = new Button();
             lblCatatan = new Label();
             lblListProposal = new Label();
+            btnBack = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProposals).BeginInit();
             SuspendLayout();
             // 
             // dgvProposals
             // 
             dgvProposals.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvProposals.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvProposals.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvProposals.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProposals.Location = new Point(124, 41);
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvProposals.DefaultCellStyle = dataGridViewCellStyle1;
+            dgvProposals.Location = new Point(23, 41);
             dgvProposals.Name = "dgvProposals";
-            dgvProposals.Size = new Size(555, 150);
+            dgvProposals.RowHeadersVisible = false;
+            dgvProposals.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProposals.Size = new Size(754, 247);
             dgvProposals.TabIndex = 0;
             // 
             // txtCatatan
             // 
-            txtCatatan.Location = new Point(124, 259);
+            txtCatatan.Location = new Point(124, 358);
             txtCatatan.Multiline = true;
             txtCatatan.Name = "txtCatatan";
             txtCatatan.Size = new Size(330, 80);
@@ -58,7 +72,7 @@
             // btnTerima
             // 
             btnTerima.BackColor = Color.Lime;
-            btnTerima.Location = new Point(425, 211);
+            btnTerima.Location = new Point(540, 303);
             btnTerima.Name = "btnTerima";
             btnTerima.Size = new Size(75, 23);
             btnTerima.TabIndex = 2;
@@ -69,7 +83,7 @@
             // btnTolak
             // 
             btnTolak.BackColor = Color.Red;
-            btnTolak.Location = new Point(514, 211);
+            btnTolak.Location = new Point(621, 303);
             btnTolak.Name = "btnTolak";
             btnTolak.Size = new Size(75, 23);
             btnTolak.TabIndex = 3;
@@ -80,7 +94,7 @@
             // btnRevisi
             // 
             btnRevisi.BackColor = Color.Yellow;
-            btnRevisi.Location = new Point(604, 211);
+            btnRevisi.Location = new Point(702, 303);
             btnRevisi.Name = "btnRevisi";
             btnRevisi.Size = new Size(75, 23);
             btnRevisi.TabIndex = 4;
@@ -91,7 +105,7 @@
             // lblCatatan
             // 
             lblCatatan.AutoSize = true;
-            lblCatatan.Location = new Point(124, 241);
+            lblCatatan.Location = new Point(124, 329);
             lblCatatan.Name = "lblCatatan";
             lblCatatan.Size = new Size(48, 15);
             lblCatatan.TabIndex = 5;
@@ -100,17 +114,29 @@
             // lblListProposal
             // 
             lblListProposal.AutoSize = true;
-            lblListProposal.Location = new Point(124, 18);
+            lblListProposal.Location = new Point(23, 14);
             lblListProposal.Name = "lblListProposal";
             lblListProposal.Size = new Size(91, 15);
             lblListProposal.TabIndex = 6;
             lblListProposal.Text = "LIST PROPOSAL";
+            // 
+            // btnBack
+            // 
+            btnBack.BackColor = SystemColors.ButtonHighlight;
+            btnBack.Location = new Point(477, 415);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(75, 23);
+            btnBack.TabIndex = 7;
+            btnBack.Text = "BACK";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += this.btnBack_Click;
             // 
             // ReviewForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnBack);
             Controls.Add(lblListProposal);
             Controls.Add(lblCatatan);
             Controls.Add(btnRevisi);
@@ -134,5 +160,6 @@
         private Button btnRevisi;
         private Label lblCatatan;
         private Label lblListProposal;
+        private Button btnBack;
     }
 }

@@ -104,5 +104,11 @@ namespace DeLFINA_GUI
         private void btnTolak_Click(object sender, EventArgs e) => ProcessAction(AksiReview.TOLAK);
 
         private void btnRevisi_Click(object sender, EventArgs e) => ProcessAction(AksiReview.MINTA_REVISI);
+
+        // Event Handler untuk tombol kembali, menutup form saat diklik (untuk sementara)
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
