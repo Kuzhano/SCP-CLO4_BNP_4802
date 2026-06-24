@@ -69,7 +69,6 @@ namespace DeLFINA_GUI
             try
             {
                 // EKSEKUSI TEKNIK KONSTRUKSI (Automata & Table-Driven)
-                // Meminta status baru ke State Machine berdasarkan status lama dan aksi tombol
                 StatusProposal statusLama = Enum.Parse<StatusProposal>(selectedProposal.StatusPenerimaan);
 
                 StatusProposal statusBaru = _stateMachine.GetNextState(statusLama, aksi);
@@ -81,7 +80,8 @@ namespace DeLFINA_GUI
                 string updatedJson = JsonSerializer.Serialize(_proposals, new JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText(_filePath, updatedJson);
 
-                MessageBox.Show($"Berhasil! Status proposal diubah menjadi: {selectedProposal.StatusPenerimaan}", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Berhasil! Status proposal diubah menjadi: {selectedProposal.StatusPenerimaan}", "Sukses",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 LoadData();
                 txtCatatan.Clear();
