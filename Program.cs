@@ -18,6 +18,7 @@ namespace DeLFINA_GUI
 
             // Dependency Injection
             Application.Run(new FormLogin(authService));
+            Application.Run(new ReviewForm());
         }
     }
 }
