@@ -1,18 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Rayka\\Downloads\\output_dashboard\\",
+  "WorkspaceRootPath": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|c:\\users\\rayka\\downloads\\output_dashboard\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|solutionrelative:dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|d:\\codemylife\\csharp\\delfina_gui\\formpendaftaran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|solutionrelative:formpendaftaran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|c:\\users\\rayka\\downloads\\output_dashboard\\formdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|d:\\codemylife\\csharp\\delfina_gui\\formpendaftaran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|solutionrelative:formpendaftaran.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|d:\\codemylife\\csharp\\delfina_gui\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|solutionrelative:formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|d:\\codemylife\\csharp\\delfina_gui\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|solutionrelative:appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|d:\\codemylife\\csharp\\delfina_gui\\formmenu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|solutionrelative:formmenu.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|d:\\codemylife\\csharp\\delfina_gui\\formdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|solutionrelative:formdashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|c:\\users\\rayka\\downloads\\output_dashboard\\delfina_gui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|solutionrelative:delfina_gui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|d:\\codemylife\\csharp\\delfina_gui\\proposal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|solutionrelative:proposal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|d:\\codemylife\\csharp\\delfina_gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5F20407-F6CE-F6D3-C0BE-133A84EAD68B}|DeLFINA_GUI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,42 +45,110 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormDashboard.cs",
-              "DocumentMoniker": "C:\\Users\\Rayka\\Downloads\\output_dashboard\\FormDashboard.cs",
-              "RelativeDocumentMoniker": "FormDashboard.cs",
-              "ToolTip": "C:\\Users\\Rayka\\Downloads\\output_dashboard\\FormDashboard.cs",
-              "RelativeToolTip": "FormDashboard.cs",
-              "ViewState": "AgIAAM8AAAAAAAAAAAAowMoAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T22:11:53.678Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DashboardService.cs",
-              "DocumentMoniker": "C:\\Users\\Rayka\\Downloads\\output_dashboard\\DashboardService.cs",
-              "RelativeDocumentMoniker": "DashboardService.cs",
-              "ToolTip": "C:\\Users\\Rayka\\Downloads\\output_dashboard\\DashboardService.cs",
-              "RelativeToolTip": "DashboardService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABTAAAAAAAAAA==",
+              "Title": "FormPendaftaran.cs",
+              "DocumentMoniker": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\FormPendaftaran.cs",
+              "RelativeDocumentMoniker": "FormPendaftaran.cs",
+              "ToolTip": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\FormPendaftaran.cs*",
+              "RelativeToolTip": "FormPendaftaran.cs*",
+              "ViewState": "AgIAAB4AAAAAAAAAAAA5wDEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-23T22:11:38.139Z",
+              "WhenOpened": "2026-06-24T09:31:55.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormPendaftaran.cs [Design]",
+              "DocumentMoniker": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\FormPendaftaran.cs",
+              "RelativeDocumentMoniker": "FormPendaftaran.cs",
+              "ToolTip": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\FormPendaftaran.cs [Design]*",
+              "RelativeToolTip": "FormPendaftaran.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T09:31:51.03Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormDashboard.cs",
+              "DocumentMoniker": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\FormDashboard.cs",
+              "RelativeDocumentMoniker": "FormDashboard.cs",
+              "ToolTip": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\FormDashboard.cs",
+              "RelativeToolTip": "FormDashboard.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T09:29:50.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormMenu.Designer.cs",
+              "DocumentMoniker": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\FormMenu.Designer.cs",
+              "RelativeDocumentMoniker": "FormMenu.Designer.cs",
+              "ToolTip": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\FormMenu.Designer.cs",
+              "RelativeToolTip": "FormMenu.Designer.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAYwCwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T09:27:14.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppConfig.cs",
+              "DocumentMoniker": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\AppConfig.cs",
+              "RelativeDocumentMoniker": "AppConfig.cs",
+              "ToolTip": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\AppConfig.cs",
+              "RelativeToolTip": "AppConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T10:25:45.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Proposal.cs",
+              "DocumentMoniker": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\Proposal.cs",
+              "RelativeDocumentMoniker": "Proposal.cs",
+              "ToolTip": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\Proposal.cs",
+              "RelativeToolTip": "Proposal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T10:25:30.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DeLFINA_GUI",
-              "DocumentMoniker": "C:\\Users\\Rayka\\Downloads\\output_dashboard\\DeLFINA_GUI.csproj",
-              "RelativeDocumentMoniker": "DeLFINA_GUI.csproj",
-              "ToolTip": "C:\\Users\\Rayka\\Downloads\\output_dashboard\\DeLFINA_GUI.csproj",
-              "RelativeToolTip": "DeLFINA_GUI.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-06-23T22:11:35.739Z",
+              "Title": "FormMenu.cs",
+              "DocumentMoniker": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\FormMenu.cs",
+              "RelativeDocumentMoniker": "FormMenu.cs",
+              "ToolTip": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\FormMenu.cs",
+              "RelativeToolTip": "FormMenu.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAowEUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T10:20:08.522Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\CodeMyLife\\Csharp\\DeLFINA_GUI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T10:17:45.265Z",
               "EditorCaption": ""
             }
           ]

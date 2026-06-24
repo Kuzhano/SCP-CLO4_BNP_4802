@@ -3,79 +3,67 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Modul_Pengarsipan_dan_Ekspor_Data
+namespace DeLFINA_GUI
 {
-    public interface IArchivingServiceAPI<T> where T : ProposalDasar
+    // TEKNIK 1: Antarmuka API
+    public interface IArchivingServiceAPI<T> where T : class
     {
         List<T> SaringProposalSelesai(List<T> daftarProposal);
-        void EksporDataBerdasarkanKonfigurasi(List<T> dataTerpilih, string namaFileTanpaEkstensi, string formatKonfigurasi, string peranPengguna);
+        void EksporDataBerdasarkanKonfigurasi(List<T> dataTerpilih, string pathFolder, string namaFileTanpaEkstensi, string formatKonfigurasi, string peranPengguna);
     }
 
-    public class PengarsipDataEkspor<T> : IArchivingServiceAPI<T> where T : ProposalDasar
+    // TEKNIK 2: Parameterization / Generics
+    public class PengarsipDataEkspor<T> : IArchivingServiceAPI<T> where T : Proposal
     {
         public List<T> SaringProposalSelesai(List<T> daftarProposal)
         {
-            if (daftarProposal == null) throw new ArgumentNullException(nameof(daftarProposal), "Data input tidak boleh null!");
+            if (daftarProposal == null) throw new ArgumentNullException(nameof(daftarProposal), "Data tidak boleh null!");
 
-            List<T> hasilSaringan = new List<T>();
-            foreach (var proposal in daftarProposal)
-            {
-                if (proposal.StatusPenerimaan != null &&
-                proposal.StatusPenerimaan.Equals("Selesai", StringComparison.OrdinalIgnoreCase))
-                {
-                    hasilSaringan.Add(proposal);
-                }
-            }
-            return hasilSaringan;
+            // Filter hanya proposal yang statusnya DITERIMA
+            return daftarProposal.FindAll(p =>
+                p.StatusPenerimaan != null &&
+                p.StatusPenerimaan.Equals("DITERIMA", StringComparison.OrdinalIgnoreCase));
         }
 
-        public void EksporDataBerdasarkanKonfigurasi(List<T> dataTerpilih, string namaFileTanpaEkstensi, string formatKonfigurasi, string peranPengguna)
+        public void EksporDataBerdasarkanKonfigurasi(List<T> dataTerpilih, string pathFolder, string namaFileTanpaEkstensi, string formatKonfigurasi, string peranPengguna)
         {
-            if (!peranPengguna.Equals("Admin", StringComparison.OrdinalIgnoreCase) &&
-                !peranPengguna.Equals("Dosen", StringComparison.OrdinalIgnoreCase))
+            // DbC: Otorisasi Keamanan
+            if (!peranPengguna.Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
-                Console.WriteLine($"\n[AKSES DITOLAK] Peran '{peranPengguna}' tidak memiliki hak akses untuk arsip.");
-                return;
+                throw new UnauthorizedAccessException($"Akses Ditolak! Peran '{peranPengguna}' tidak diizinkan mengekspor data.");
             }
 
             if (dataTerpilih == null || dataTerpilih.Count == 0)
             {
-                Console.WriteLine("\n[PERINGATAN] Tidak ada data proposal berstatus 'Selesai' untuk diekspor.");
-                return;
+                throw new InvalidOperationException("Tidak ada data proposal berstatus 'DITERIMA' untuk diekspor.");
             }
 
             StringBuilder kontenFile = new StringBuilder();
-            string namaFileLengkap = "";
+            string namaFileLengkap = $"{namaFileTanpaEkstensi}.{formatKonfigurasi.ToLower()}";
+            string pathLengkap = Path.Combine(pathFolder, namaFileLengkap);
 
             if (formatKonfigurasi.Equals("CSV", StringComparison.OrdinalIgnoreCase))
             {
-                namaFileLengkap = namaFileTanpaEkstensi + ".csv";
-                kontenFile.AppendLine("Judul,Status_Penerimaan,File_Proposal,Waktu_Submit");
+                kontenFile.AppendLine("ID_Proposal,Pengaju,Judul,Status_Penerimaan,Tgl_Submisi,Tgl_Presentasi");
                 foreach (var item in dataTerpilih)
                 {
-                    kontenFile.AppendLine($@"""{item.Judul}"",""{item.StatusPenerimaan}"",""{item.LinkPdf}"",""{item.TanggalSubmisi}""");
+                    kontenFile.AppendLine($@"""{item.IdProposal}"",""{item.Pengaju}"",""{item.Judul}"",""{item.StatusPenerimaan}"",""{item.TanggalSubmisi}"",""{item.TanggalPresentasi}""");
                 }
             }
             else if (formatKonfigurasi.Equals("TXT", StringComparison.OrdinalIgnoreCase))
             {
-                namaFileLengkap = namaFileTanpaEkstensi + ".txt";
                 kontenFile.AppendLine("=== REKAPITULASI ARSIP PROPOSAL ===");
                 foreach (var item in dataTerpilih)
                 {
-                    kontenFile.AppendLine($"Judul: {item.Judul} | Status: {item.StatusPenerimaan} | Berkas: {item.LinkPdf} | Submit: {item.TanggalSubmisi}");
+                    kontenFile.AppendLine($"ID: {item.IdProposal} | Pengaju: {item.Pengaju} | Judul: {item.Judul} | Status: {item.StatusPenerimaan}");
                 }
             }
             else
             {
-                Console.WriteLine($"\n[ERROR] Format konfigurasi '{formatKonfigurasi}' tidak didukung.");
-                return;
+                throw new ArgumentException($"Format konfigurasi '{formatKonfigurasi}' tidak didukung.");
             }
 
-            string pathLengkap = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, namaFileLengkap);
             File.WriteAllText(pathLengkap, kontenFile.ToString());
-
-            Console.WriteLine($"\n[SUKSES] Berhasil mengekspor {dataTerpilih.Count} data ke: {namaFileLengkap}");
-            Console.WriteLine($"Lokasi berkas: {pathLengkap}");
         }
     }
 }

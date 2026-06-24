@@ -23,19 +23,19 @@ namespace DeLFINA_GUI
         private Button btnTutup;
 
         // Constructor
-        public FormDashboard()
+        public FormDashboard(JsonRepository<Proposal> repository, AppConfig config)
         {
-            // Inisialisasi service dengan dependency injection manual
-            var config = AppConfig.LoadConfiguration();
-            var repository = new JsonRepository<Proposal>(config.ProposalFilePath);
+            if (repository == null) throw new ArgumentNullException(nameof(repository));
+            if (config == null) throw new ArgumentNullException(nameof(config));
+
             _dashboardService = new DashboardService(repository, config);
 
-            InitializeComponent();
+            SetupUI();
             MuatData();
         }
 
         // InitializeComponent — layout seluruh form
-        private void InitializeComponent()
+        private void SetupUI()
         {
             this.Text = "DeLFINA — Dashboard Pemantauan Proposal";
             this.Size = new Size(900, 620);

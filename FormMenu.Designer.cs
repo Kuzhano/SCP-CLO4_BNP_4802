@@ -53,6 +53,7 @@
             btnPendaftaran.TabIndex = 1;
             btnPendaftaran.Text = "Pendaftaran";
             btnPendaftaran.UseVisualStyleBackColor = true;
+            btnPendaftaran.Click += btnPendaftaran_Click;
             // 
             // btnReview
             // 
@@ -62,6 +63,7 @@
             btnReview.TabIndex = 2;
             btnReview.Text = "Review";
             btnReview.UseVisualStyleBackColor = true;
+            btnReview.Click += btnReview_Click;
             // 
             // btnDashboard
             // 
@@ -71,6 +73,7 @@
             btnDashboard.TabIndex = 3;
             btnDashboard.Text = "Dashboard";
             btnDashboard.UseVisualStyleBackColor = true;
+            btnDashboard.Click += btnDashboard_Click;
             // 
             // btnEkspor
             // 
@@ -80,6 +83,7 @@
             btnEkspor.TabIndex = 4;
             btnEkspor.Text = "Ekspor";
             btnEkspor.UseVisualStyleBackColor = true;
+            btnEkspor.Click += btnEkspor_Click;
             // 
             // btnLogout
             // 

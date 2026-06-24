@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="../DeLFINA_CLI/DeLFINA_CLI.csproj" />
   <Project Path="DeLFINA_GUI.csproj" />
 </Solution>

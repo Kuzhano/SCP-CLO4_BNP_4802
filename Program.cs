@@ -10,16 +10,12 @@ namespace DeLFINA_GUI
         {
             ApplicationConfiguration.Initialize();
 
-            // Inisialisasi API Otentikasi (Database lokal)
-            string dbProposals = "proposals.json";
+            // 1. Inisialisasi API Otentikasi (Database lokal pengguna)
             string dbUsers = "users.json";
-
             IAuthApi authService = new JsonAuthService(dbUsers);
 
-            // Dependency Injection
+            // 2. Entry Point Tunggal
             Application.Run(new FormLogin(authService));
-            Application.Run(new ReviewForm());
-            Application.Run(new GUI_Pengarsipan());
         }
     }
 }

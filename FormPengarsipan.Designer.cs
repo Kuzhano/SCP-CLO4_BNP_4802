@@ -1,6 +1,6 @@
 ﻿namespace DeLFINA_GUI
 {
-    partial class GUI_Pengarsipan
+    partial class FormPengarsipan
     {
         /// <summary>
         /// Required designer variable.

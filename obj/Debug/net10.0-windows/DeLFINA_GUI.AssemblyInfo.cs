@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DeLFINA_GUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a91f09f7dd2da84e00d78398391a4437125740c5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd7af049f8aaea63a596bd6a3ba12e60dda284b5")]
 [assembly: System.Reflection.AssemblyProductAttribute("DeLFINA_GUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DeLFINA_GUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

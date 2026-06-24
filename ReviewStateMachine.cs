@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ModulReviewPenilaian
+namespace DeLFINA_GUI
 {
     public enum StatusProposal { PENDING, DITERIMA, DITOLAK, REVISI }
     public enum AksiReview { TERIMA, TOLAK, MINTA_REVISI, KEMBALIKAN_PENDING }

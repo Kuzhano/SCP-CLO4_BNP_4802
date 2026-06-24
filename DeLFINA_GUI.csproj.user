@@ -10,10 +10,13 @@
     <Compile Update="FormMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GUI_Pengarsipan.cs">
+    <Compile Update="FormPengarsipan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ReviewForm.cs">
+    <Compile Update="FormPendaftaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormReview.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

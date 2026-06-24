@@ -6,13 +6,18 @@ namespace DeLFINA_GUI
     public partial class FormMenu : Form
     {
         private readonly UserAccount _currentUser;
+        private readonly JsonRepository<Proposal> _repository;
+        private readonly AppConfig _config;
 
         public FormMenu(UserAccount user)
         {
             InitializeComponent();
             _currentUser = user ?? throw new ArgumentNullException(nameof(user));
 
-            // Panggil mesin Automata saat form dimuat
+            _config = AppConfig.LoadConfiguration();
+
+            _repository = new JsonRepository<Proposal>(_config.ProposalFilePath);
+
             ConfigureUIState();
         }
 
@@ -39,34 +44,51 @@ namespace DeLFINA_GUI
             }
         }
 
-        // Event Handler Tombol (Nanti disambungkan dengan Form milik teman Anda)
         private void btnPendaftaran_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("[Routing] Membuka antarmuka Pendaftaran...", "Modul 2");
-            // Nanti diganti: new FormPendaftaran().Show();
+            FormPendaftaran pendaftaran = new FormPendaftaran(_currentUser);
+            this.Hide();
+
+            pendaftaran.FormClosed += (s, args) => this.Show();
+            pendaftaran.Show();
         }
 
         private void btnReview_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("[Routing] Membuka antarmuka Review & Penilaian...", "Modul 3");
+            FormReview review = new FormReview(_repository, _currentUser);
+
+            this.Hide();
+
+            review.FormClosed += (s, args) => this.Show();
+            review.Show();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("[Routing] Membuka antarmuka Dashboard...", "Modul 4");
+            FormDashboard dashboard = new FormDashboard(_repository, _config);
+
+            this.Hide();
+
+            dashboard.FormClosed += (s, args) => this.Show();
+            dashboard.Show();
         }
 
         private void btnEkspor_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("[Routing] Membuka antarmuka Pengarsipan...", "Modul 5");
+            FormPengarsipan Pengersipan = new FormPengarsipan(_repository, _currentUser);
+
+            this.Hide();
+
+            Pengersipan.FormClosed += (s, args) => this.Show();
+            Pengersipan.Show();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            // Transisi kembali ke State awal (Login)
             FormLogin loginForm = new FormLogin(new JsonAuthService("users.json"));
+
             loginForm.Show();
-            this.Dispose(); // Membersihkan form menu dari memori
+            this.Dispose();
         }
 
         // Pastikan aplikasi benar-benar mati jika user menekan tombol 'X' merah di pojok kanan atas

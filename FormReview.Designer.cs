@@ -1,6 +1,6 @@
 ﻿namespace DeLFINA_GUI
 {
-    partial class ReviewForm
+    partial class FormReview : Form
     {
         /// <summary>
         /// Required designer variable.
