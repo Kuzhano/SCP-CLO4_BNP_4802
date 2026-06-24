@@ -38,24 +38,18 @@ namespace DeLFINA_GUI
     public class PendaftaranService : Form
     {
         private readonly JsonRepository<Pendaftaran> _repository;
-        private string _currentDosen = "Budi Santoso"; // Simulasi sesi aktif Dosen dari users.json
+        private string _currentDosen = "Budi Santoso"; 
 
-        // Komponen GUI Elemen
         private TextBox txtJudul, txtLinkPdf;
         private DataGridView gridProposal;
-        private Button btnSimpan;
+        private Button btnSimpan, btnKembali;
         private Label lblHeader, lblJudul, lblLink, lblDaftar;
 
         public PendaftaranService()
         {
-            // Inisialisasi Repositori menggunakan Runtime Config
             AppConfig config = AppConfig.LoadConfig();
             _repository = new JsonRepository<Pendaftaran>(config.ProposalFilePath);
-
-            // Setup Desain Form GUI
             InitializeComponent();
-
-            // Render data pertama kali ke tabel data
             LoadDataGrid();
         }
 
@@ -71,7 +65,7 @@ namespace DeLFINA_GUI
             Font fontLabel = new Font("Segoe UI", 10, FontStyle.Regular);
             Font fontTextBox = new Font("Segoe UI", 10, FontStyle.Regular);
 
-            // Header Aplikasi
+            // Header
             lblHeader = new Label()
             {
                 Text = "DASHBOARD PENGAJUAN PROPOSAL DOSEN",
@@ -104,7 +98,21 @@ namespace DeLFINA_GUI
             };
             btnSimpan.Click += BtnSimpan_Click;
 
-            // Judul Tabel/Daftar
+            // Back button
+            btnKembali = new Button()
+            {
+                Text = "← Kembali",
+                Location = new Point(325, 142), // Posisi di sebelah tombol submit
+                Width = 120,
+                Height = 35,
+                Font = new Font("Segoe UI", 10, FontStyle.Regular),
+                BackColor = Color.FromArgb(210, 218, 226),
+                ForeColor = Color.FromArgb(47, 54, 64),
+                FlatStyle = FlatStyle.Flat
+            };
+            btnKembali.Click += BtnKembali_Click;
+
+            // Judul Tabel
             lblDaftar = new Label()
             {
                 Text = $"Riwayat Proposal Anda ({_currentDosen}):",
@@ -113,7 +121,7 @@ namespace DeLFINA_GUI
                 Font = new Font("Segoe UI", 11, FontStyle.Bold)
             };
 
-            // DataGridView Komponen (Tabel)
+            // Komponen Tabel
             gridProposal = new DataGridView()
             {
                 Location = new Point(20, 225),
@@ -126,13 +134,13 @@ namespace DeLFINA_GUI
                 RowHeadersVisible = false
             };
 
-            // Menambahkan Seluruh Komponen Ke dalam Form Kontrol
+            // Menambahkan Komponen Ke Kontrol
             this.Controls.AddRange(new Control[] {
-                lblHeader, lblJudul, txtJudul, lblLink, txtLinkPdf, btnSimpan, lblDaftar, gridProposal
+                lblHeader, lblJudul, txtJudul, lblLink, txtLinkPdf, btnSimpan, btnKembali, lblDaftar, gridProposal
             });
         }
 
-        // Logika Mengambil dan Menyaring Data Berdasarkan Akun Dosen
+        // Mengambil dan Menyaring Data Berdasarkan Akun Dosen
         private void LoadDataGrid()
         {
             try
@@ -158,27 +166,21 @@ namespace DeLFINA_GUI
         {
             try
             {
-                // Validasi input form sederhana
                 if (string.IsNullOrWhiteSpace(txtJudul.Text) || string.IsNullOrWhiteSpace(txtLinkPdf.Text))
                 {
                     MessageBox.Show("Judul Proposal dan Link PDF wajib diisi!", "Validasi Gagal", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Pembuatan ID & Waktu secara otomatis sesuai format log target
                 string idProposal = "PROP-" + DateTime.Now.ToString("yyyyMMddHHmmss");
                 string tanggalSubmisi = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                string statusPenerimaan = "PENDING"; // Default status pasca submit pertama kali
+                string statusPenerimaan = "PENDING"; // Default awal
 
-                // Pembuatan instance entitas penampung
                 Pendaftaran dataBaru = new Pendaftaran(idProposal, _currentDosen, txtJudul.Text, txtLinkPdf.Text, tanggalSubmisi, statusPenerimaan);
-
-                // Eksekusi penyimpanan data ke file JSON via Generics Repositori
                 _repository.Add(dataBaru);
 
                 MessageBox.Show("Proposal baru berhasil diajukan dan disimpan ke format JSON database!", "Sukses Submisi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                // Pembersihan kolom input & Penyegaran tabel GUI
                 txtJudul.Clear();
                 txtLinkPdf.Clear();
                 LoadDataGrid();
@@ -187,6 +189,14 @@ namespace DeLFINA_GUI
             {
                 MessageBox.Show($"Terjadi kesalahan sistem: {ex.Message}", "Error Penyimpanan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        // Event Handler Back Button
+        private void BtnKembali_Click(object sender, EventArgs e)
+        {
+            // Menutup form pendaftaran 
+            // Jika dipanggil dari Modul 1, akan kembali ke Menu Utama.
+            this.Close();
         }
     }
 }
