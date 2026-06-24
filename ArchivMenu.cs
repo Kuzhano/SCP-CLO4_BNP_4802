@@ -46,7 +46,7 @@ namespace Modul_Pengarsipan_dan_Ekspor_Data
                     Console.WriteLine("\n--- DATA PROPOSAL PRODUKSI KONTEN ---");
                     foreach (var p in _daftarPK)
                     {
-                        Console.WriteLine($"[{p.ID_Proposal_PK}] MK: {p.Nama_Mata_Kuliah} | Judul: {p.Judul} | Status: {p.Status_Penerimaan}");
+                        Console.WriteLine($"[{p.IdProposal}] Pengaju: {p.Pengaju} | Judul: {p.Judul} | Status: {p.StatusPenerimaan}");
                     }
                 }
                 else if (pilihan == "2")
@@ -54,7 +54,7 @@ namespace Modul_Pengarsipan_dan_Ekspor_Data
                     Console.WriteLine("\n--- DATA PROPOSAL HIGH-LEVEL ENTERPRISE (HLE) ---");
                     foreach (var h in _daftarHLE)
                     {
-                        Console.WriteLine($"[{h.ID_Proposal_HLE}] Topik: {h.Topik} | Judul: {h.Judul} | Status: {h.Status_Penerimaan}");
+                        Console.WriteLine($"[{h.IdProposal}] Pengaju: {h.Pengaju} | Judul: {h.Judul} | Status: {h.StatusPenerimaan}");
                     }
                 }
                 else if (pilihan == "3")

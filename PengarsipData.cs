@@ -20,8 +20,8 @@ namespace Modul_Pengarsipan_dan_Ekspor_Data
             List<T> hasilSaringan = new List<T>();
             foreach (var proposal in daftarProposal)
             {
-                if (proposal.Status_Penerimaan != null &&
-                    proposal.Status_Penerimaan.Equals("Selesai", StringComparison.OrdinalIgnoreCase))
+                if (proposal.StatusPenerimaan != null &&
+                proposal.StatusPenerimaan.Equals("Selesai", StringComparison.OrdinalIgnoreCase))
                 {
                     hasilSaringan.Add(proposal);
                 }
@@ -53,7 +53,7 @@ namespace Modul_Pengarsipan_dan_Ekspor_Data
                 kontenFile.AppendLine("Judul,Status_Penerimaan,File_Proposal,Waktu_Submit");
                 foreach (var item in dataTerpilih)
                 {
-                    kontenFile.AppendLine($@"""{item.Judul}"",""{item.Status_Penerimaan}"",""{item.File_Proposal}"",""{item.Waktu_Submit}""");
+                    kontenFile.AppendLine($@"""{item.Judul}"",""{item.StatusPenerimaan}"",""{item.LinkPdf}"",""{item.TanggalSubmisi}""");
                 }
             }
             else if (formatKonfigurasi.Equals("TXT", StringComparison.OrdinalIgnoreCase))
@@ -62,7 +62,7 @@ namespace Modul_Pengarsipan_dan_Ekspor_Data
                 kontenFile.AppendLine("=== REKAPITULASI ARSIP PROPOSAL ===");
                 foreach (var item in dataTerpilih)
                 {
-                    kontenFile.AppendLine($"Judul: {item.Judul} | Status: {item.Status_Penerimaan} | Berkas: {item.File_Proposal} | Submit: {item.Waktu_Submit}");
+                    kontenFile.AppendLine($"Judul: {item.Judul} | Status: {item.StatusPenerimaan} | Berkas: {item.LinkPdf} | Submit: {item.TanggalSubmisi}");
                 }
             }
             else

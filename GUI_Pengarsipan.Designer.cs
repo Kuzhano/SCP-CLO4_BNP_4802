@@ -88,11 +88,11 @@
             // 
             // btnExportKonten
             // 
-            btnExportKonten.Location = new Point(3, 154);
+            btnExportKonten.Location = new Point(0, 157);
             btnExportKonten.Name = "btnExportKonten";
             btnExportKonten.Size = new Size(175, 29);
             btnExportKonten.TabIndex = 3;
-            btnExportKonten.Text = "btnExportKonten";
+            btnExportKonten.Text = "ExportKonten";
             btnExportKonten.UseVisualStyleBackColor = true;
             btnExportKonten.Click += btnExportKonten_Click;
             // 
@@ -110,12 +110,13 @@
             // 
             // btnExportHLE
             // 
-            btnExportHLE.Location = new Point(3, 154);
+            btnExportHLE.Location = new Point(0, 155);
             btnExportHLE.Name = "btnExportHLE";
-            btnExportHLE.Size = new Size(189, 29);
+            btnExportHLE.Size = new Size(185, 31);
             btnExportHLE.TabIndex = 1;
-            btnExportHLE.Text = "btnExportHLE";
+            btnExportHLE.Text = "ExportHLE";
             btnExportHLE.UseVisualStyleBackColor = true;
+            btnExportHLE.Click += btnExportKonten_Click;
             // 
             // dataGridView2
             // 

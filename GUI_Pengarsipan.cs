@@ -17,6 +17,7 @@ namespace DeLFINA_GUI
         public GUI_Pengarsipan()
         {
             InitializeComponent();
+            btnExportHLE.Click += btnExportHLE_Click;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -24,7 +25,7 @@ namespace DeLFINA_GUI
             bool isAdmin = (comboBox1.Text == "Admin");
             btnExportKonten.Enabled = isAdmin;
             btnExportHLE.Enabled = isAdmin;
-        
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -39,11 +40,14 @@ namespace DeLFINA_GUI
                 comboBox1.Items.AddRange(new string[] { "Admin", "Dosen" });
                 comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             }
+
+            // Tambahkan baris ini agar data dibaca saat aplikasi terbuka
+            MuatDataDariJson();
         }
 
         private void btnExportKonten_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
                 var service = new PengarsipDataEkspor<ProposalProduksiKonten>();
                 service.EksporDataBerdasarkanKonfigurasi(listProduksiKonten, "Laporan_Konten", "CSV", comboBox1.Text);
