@@ -1,0 +1,14 @@
+C:\Users\Rayka\Downloads\output_dashboard\bin\Debug\net10.0-windows\DeLFINA_GUI.exe
+C:\Users\Rayka\Downloads\output_dashboard\bin\Debug\net10.0-windows\DeLFINA_GUI.deps.json
+C:\Users\Rayka\Downloads\output_dashboard\bin\Debug\net10.0-windows\DeLFINA_GUI.runtimeconfig.json
+C:\Users\Rayka\Downloads\output_dashboard\bin\Debug\net10.0-windows\DeLFINA_GUI.dll
+C:\Users\Rayka\Downloads\output_dashboard\bin\Debug\net10.0-windows\DeLFINA_GUI.pdb
+C:\Users\Rayka\Downloads\output_dashboard\obj\Debug\net10.0-windows\DeLFINA_GUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rayka\Downloads\output_dashboard\obj\Debug\net10.0-windows\DeLFINA_GUI.AssemblyInfoInputs.cache
+C:\Users\Rayka\Downloads\output_dashboard\obj\Debug\net10.0-windows\DeLFINA_GUI.AssemblyInfo.cs
+C:\Users\Rayka\Downloads\output_dashboard\obj\Debug\net10.0-windows\DeLFINA_GUI.csproj.CoreCompileInputs.cache
+C:\Users\Rayka\Downloads\output_dashboard\obj\Debug\net10.0-windows\DeLFINA_GUI.dll
+C:\Users\Rayka\Downloads\output_dashboard\obj\Debug\net10.0-windows\refint\DeLFINA_GUI.dll
+C:\Users\Rayka\Downloads\output_dashboard\obj\Debug\net10.0-windows\DeLFINA_GUI.pdb
+C:\Users\Rayka\Downloads\output_dashboard\obj\Debug\net10.0-windows\DeLFINA_GUI.genruntimeconfig.cache
+C:\Users\Rayka\Downloads\output_dashboard\obj\Debug\net10.0-windows\ref\DeLFINA_GUI.dll

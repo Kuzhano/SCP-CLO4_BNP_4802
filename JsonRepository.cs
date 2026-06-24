@@ -1,75 +1,56 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Text.Json;
 
 namespace DeLFINA_GUI
 {
-    public class AppConfig
-    {
-        public string ProposalFilePath { get; set; } = "proposals.json";
-
-        public static AppConfig LoadConfig()
-        {
-            string configPath = "appconfig.json";
-            if (File.Exists(configPath))
-            {
-                try
-                {
-                    string jsonString = File.ReadAllText(configPath);
-                    return JsonSerializer.Deserialize<AppConfig>(jsonString) ?? new AppConfig();
-                }
-                catch { /* Fallback ke default jika gagal membaca */ }
-            }
-            return new AppConfig();
-        }
-    }
-
-    // Generic Repository untuk penanganan file JSON secara dinamis
+    // Teknik: Generics (Parameterization)
     public class JsonRepository<T> where T : class
     {
         private readonly string _filePath;
 
         public JsonRepository(string filePath)
         {
+            // DbC: Pre-condition
+            if (string.IsNullOrWhiteSpace(filePath))
+                throw new ArgumentException("Path file database tidak boleh kosong.");
+
             _filePath = filePath;
         }
 
-        // Membaca seluruh data dari file JSON
-        public List<T> GetAll()
+        public List<T> GetAllData()
         {
-            if (!File.Exists(_filePath))
-            {
-                return new List<T>();
-            }
+            if (!File.Exists(_filePath)) return new List<T>();
 
             try
             {
                 string jsonString = File.ReadAllText(_filePath);
                 return JsonSerializer.Deserialize<List<T>>(jsonString) ?? new List<T>();
             }
-            catch (Exception ex)
+            catch (JsonException)
             {
-                throw new Exception($"Gagal membaca repositori: {ex.Message}");
+                // DbC: Defensive Programming - cegah crash karena JSON invalid
+                throw new InvalidOperationException($"Format JSON pada {_filePath} tidak valid.");
             }
         }
 
-        // Menambahkan data baru dan menyimpannya kembali ke JSON
-        public void Add(T entity)
+        public void SaveData(T newData)
         {
-            List<T> data = GetAll();
-            data.Add(entity);
+            // DbC: Pre-condition
+            if (newData == null) throw new ArgumentNullException(nameof(newData), "Data tidak boleh null.");
 
-            try
-            {
-                var options = new JsonSerializerOptions { WriteIndented = true };
-                string jsonString = JsonSerializer.Serialize(data, options);
-                File.WriteAllText(_filePath, jsonString);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception($"Gagal menyimpan data ke repositori: {ex.Message}");
-            }
+            List<T> currentData = GetAllData();
+            currentData.Add(newData);
+
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            File.WriteAllText(_filePath, JsonSerializer.Serialize(currentData, options));
+        }
+
+        public void UpdateAll(List<T> allData)
+        {
+            // DbC: Pre-condition
+            if (allData == null) throw new ArgumentNullException(nameof(allData), "Data tidak boleh null.");
+
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            File.WriteAllText(_filePath, JsonSerializer.Serialize(allData, options));
         }
     }
 }
